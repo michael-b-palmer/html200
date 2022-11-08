@@ -21,6 +21,6 @@ let remainingcats = 13
 if (remainingcats === crazycatperson){
   console.log(person1 + "According to Buzzfeed, owning " + crazycatperson + " or more cats makes you a crazy cat person.");}
   else {
-    console.log(person1 + "That's probably enough for now.");
+    console.log(person1 + "That's enough for now.");
  }
 
