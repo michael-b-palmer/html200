@@ -1,0 +1,13 @@
+const hats = ["fedora", "fedora", "bitcoin", "fedora", "fedora"];
+
+console.log("starting array: " + hats.toString())
+
+if (hats[0]="fedora"){
+  hats.push("m'lady");
+  console.log("added m'lady: " + hats.toString())
+}
+if (hats[2]="bitcoin"){
+  let removed = hats.splice(2, 1);
+  console.log("removed this item: " + removed);
+  console.log("final array: " + hats.toString())
+} 
