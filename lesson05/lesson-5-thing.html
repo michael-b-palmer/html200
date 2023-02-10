@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Super Cool Bank</title>
+</head>
+
+<body>
+  <script>
+    let balance = 0;
+    while (true) {
+      const actions = `
+           W - Withdraw
+           D - Deposit
+           B - View balance
+           Q - Quit
+        `;
+      const action = prompt(`Enter an action:
+        ${actions}`).toLowerCase();
+      if (action === "q") {
+        break;
+      } else if (action === "w") {
+        const amount = parseInt(prompt("Enter an amount to withdraw."));
+        if (amount > balance) {
+          alert("This isn't a charity! You cannot withdraw more than your balance.");
+          continue;
+        } else if (balance - amount < 300) {
+          const confirmation = confirm("Withdrawing $" + amount + " will leave you with less than $300. Are you sure?");
+          if (!confirmation) {
+            continue;
+          }
+        }
+        balance -= amount;
+      } else if (action === "d") {
+        const amount = parseInt(prompt("Enter an amount to deposit"));
+        if (amount + balance > 50000) {
+          alert("Slow down there high roller - you can't deposit more than $50,000.");
+          continue;
+        }
+        balance += amount;
+      } else if (action === "b") {
+        alert("Your balance is $" + balance);
+      } else {
+        alert("Invalid action.");
+      }
+    }
+  </script>
+</body>
+
+</html>
